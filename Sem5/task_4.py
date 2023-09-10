@@ -13,15 +13,15 @@ player_2 = {'name': name_2, 'health': 100, 'damage': 50, 'armor': 1.5}
 print(player_1)
 print(player_2)
 
-def damage(attack_player, attacked_player):
-    return int(attack_player['damage']/attacked_player['armor'])
+def damage(damage, armor):
+    return int(damage/armor)
 
-def attack(attack_player, attacked_player, damage):
-    attacked_player['health'] = attacked_player['health'] - damage(attack_player, attacked_player)
-    return attacked_player
+def attack(attack_player, attacked_player):
+    attacked_player['health'] -= damage(attack_player['damage'], attacked_player['armor'])
 
 
-attack(player_1, player_2, damage)
+
+attack(player_1, player_2)
 
 print(player_1)
 print(player_2)
